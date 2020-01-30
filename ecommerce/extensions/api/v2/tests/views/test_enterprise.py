@@ -376,9 +376,9 @@ class EnterpriseCouponViewSetRbacTests(
                 }
                 if method == 'GET':
                     return self.client.get(path, data=data)
-                elif method == 'POST':
+                if method == 'POST':
                     return self.client.post(path, json.dumps(data), 'application/json')
-                elif method == 'PUT':
+                if method == 'PUT':
                     return self.client.put(path, json.dumps(data), 'application/json')
         return None
 
@@ -511,7 +511,6 @@ class EnterpriseCouponViewSetRbacTests(
         """
         coupon = Product.objects.get(id=coupon_id)
         all_coupon_codes = coupon.attr.coupon_vouchers.vouchers.values_list('code', flat=True)
-        all_coupon_codes = [code for code in all_coupon_codes]
         if is_csv:
             total_result_count = len(response)
             all_received_codes = [result.split(',')[1] for result in response if result]
@@ -1890,8 +1889,8 @@ class EnterpriseCouponViewSetRbacTests(
         coupon = coupon.json()
         coupon_id = coupon['coupon_id']
         with mock.patch(
-            'ecommerce.extensions.offer.utils.send_offer_assignment_email.delay', side_effect=Exception()
-        ) as mock_send_email:
+                'ecommerce.extensions.offer.utils.send_offer_assignment_email.delay',
+                side_effect=Exception()) as mock_send_email:
             response = self.get_response(
                 'POST',
                 '/api/v2/enterprise/coupons/{}/assign/'.format(coupon_id),
@@ -2105,9 +2104,8 @@ class EnterpriseCouponViewSetRbacTests(
 
         offer_assignment = OfferAssignment.objects.filter(user_email=email).first()
         with mock.patch(
-            'ecommerce.extensions.offer.utils.send_offer_update_email.delay',
-            side_effect=Exception('email_dispatch_failed')
-        ) as mock_send_email:
+                'ecommerce.extensions.offer.utils.send_offer_update_email.delay',
+                side_effect=Exception('email_dispatch_failed')) as mock_send_email:
             response = self.get_response(
                 'POST',
                 '/api/v2/enterprise/coupons/{}/revoke/'.format(coupon_id),
@@ -2289,9 +2287,8 @@ class EnterpriseCouponViewSetRbacTests(
             )
         offer_assignment = OfferAssignment.objects.filter(user_email=email).first()
         with mock.patch(
-            'ecommerce.extensions.offer.utils.send_offer_update_email.delay',
-            side_effect=Exception('email_dispatch_failed')
-        ) as mock_send_email:
+                'ecommerce.extensions.offer.utils.send_offer_update_email.delay',
+                side_effect=Exception('email_dispatch_failed')) as mock_send_email:
             response = self.get_response(
                 'POST',
                 '/api/v2/enterprise/coupons/{}/remind/'.format(coupon_id),
@@ -2684,9 +2681,9 @@ class OfferAssignmentSummaryViewSetTests(
                 }
                 if method == 'GET':
                     return self.client.get(path)
-                elif method == 'POST':
+                if method == 'POST':
                     return self.client.post(path, json.dumps(data), 'application/json')
-                elif method == 'PUT':
+                if method == 'PUT':
                     return self.client.put(path, json.dumps(data), 'application/json')
         return None
 
