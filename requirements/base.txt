@@ -29,6 +29,7 @@ django-compressor==2.4
 django-cors-headers==3.2.1
 django-crispy-forms==1.8.1
 django-crum==0.7.5        # via edx-rbac
+django-extensions==2.2.6
 django-extra-views==0.11.0  # via django-oscar
 django-filter==1.0.4
 django-haystack==2.8.1    # via django-oscar
@@ -45,7 +46,6 @@ django-treebeard==4.3.1   # via django-oscar
 django-waffle==0.14.0
 django-widget-tweaks==1.4.5  # via django-oscar
 django==1.11.27
-django_extensions==1.9.9
 djangorestframework-csv==2.1.0
 djangorestframework-datatables==0.5.1
 djangorestframework-jwt==1.11.0
@@ -124,7 +124,6 @@ stevedore==1.31.0         # via edx-opaque-keys
 stripe==1.70.0
 text-unidecode==1.3       # via faker, python-slugify
 transifex-client==0.13.4
-typing==3.7.4.1           # via django-extensions
 unicodecsv==0.14.1
 unidecode==1.0.23         # via django-oscar
 uritemplate==3.0.1        # via coreapi

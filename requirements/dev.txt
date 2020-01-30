@@ -36,6 +36,7 @@ django-cors-headers==3.2.1
 django-crispy-forms==1.8.1
 django-crum==0.7.5
 django-debug-toolbar==2.1
+django-extensions==2.2.6
 django-extra-views==0.11.0
 django-filter==1.0.4
 django-haystack==2.8.1
@@ -54,7 +55,6 @@ django-waffle==0.14.0
 django-webtest==1.9.7
 django-widget-tweaks==1.4.5
 django==1.11.27
-django_extensions==1.9.9
 djangorestframework-csv==2.1.0
 djangorestframework-datatables==0.5.1
 djangorestframework-jwt==1.11.0
@@ -140,7 +140,7 @@ pytest-randomly==3.2.1
 pytest-selenium==1.17.0
 pytest-timeout==1.3.4
 pytest-variables==1.9.0
-pytest==5.3.4
+pytest==5.3.5
 python-dateutil==2.8.1
 python-dotenv==0.10.5
 python-memcached==1.58
@@ -177,7 +177,6 @@ toml==0.10.0
 tox-battery==0.5.2
 tox==3.14.3
 transifex-client==0.13.4
-typing==3.7.4.1
 unicodecsv==0.14.1
 unidecode==1.0.23
 uritemplate==3.0.1
